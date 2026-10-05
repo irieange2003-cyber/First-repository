@@ -1,0 +1,317 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+}
+
+
+/* =========================
+   STRUCTURE PRINCIPALE
+   GRID
+========================= */
+
+.page {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-rows:
+        auto
+        1fr
+        auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    background: #2196f3;
+
+    height: 74px;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+}
+
+.header h1 {
+    color: white;
+
+    font-size: 26px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+    display: grid;
+
+    grid-template-rows:
+        auto
+        1fr;
+}
+
+
+/* =========================
+   TABS
+========================= */
+
+.tabs {
+    height: 43px;
+
+    background: #2196f3;
+
+    display: flex;
+}
+
+.tabs a {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+}
+
+.tabs a.active {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================
+   LISTE DES ANNONCES
+   GRID
+========================= */
+
+.ads {
+    padding: 10px;
+
+    display: flex;
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    align-content: start;
+}
+
+
+/* =========================
+   CARTE ANNONCE
+========================= */
+
+.ad {
+    min-height: 163px;
+
+    background: white;
+
+    border-radius: 3px;
+
+    overflow: hidden;
+
+    display: flex;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.ad > img {
+    width: 172px;
+
+    height: 163px;
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   CONTENU
+========================= */
+
+.ad-content {
+    flex: 1;
+
+    padding: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+
+/* =========================
+   TITRE
+========================= */
+
+.ad h2 {
+    font-size: 18px;
+
+    font-weight: 400;
+
+    margin-bottom: 5px;
+}
+
+.ad p {
+    font-size: 16px;
+
+    color: #555;
+}
+
+
+/* =========================
+   BAS DE L'ANNONCE
+========================= */
+
+.ad-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.ad-bottom span {
+    font-size: 14px;
+
+    color: #777;
+}
+
+.ad-bottom strong {
+    font-size: 17px;
+
+    font-weight: 400;
+
+    color: #111;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    height: 61px;
+
+    padding: 0 20px;
+
+    background: #2196f3;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   VERSION DESKTOP
+========================= */
+
+@media (min-width: 900px) {
+
+    .header {
+        padding-left: 40px;
+    }
+
+    .ads {
+        max-width: 1200px;
+
+        width: 100%;
+
+        margin: 0 auto;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+    .ad {
+        min-height: 200px;
+    }
+
+    .ad > img {
+        width: 220px;
+
+        height: 200px;
+    }
+
+    .footer {
+        padding-left: 40px;
+    }
+}
+
+
+/* =========================
+   PETITS ÉCRANS
+========================= */
+
+@media (max-width: 500px) {
+
+    .header {
+        height: 74px;
+
+        padding: 0 20px;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .ad > img {
+        width: 35%;
+
+        height: auto;
+
+        min-height: 163px;
+    }
+
+    .ad h2 {
+        font-size: 17px;
+    }
+
+    .ad p {
+        font-size: 15px;
+    }
+
+    .ad-bottom strong {
+        font-size: 16px;
+    }
+}
